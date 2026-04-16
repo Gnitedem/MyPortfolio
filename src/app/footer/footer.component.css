@@ -1,0 +1,19 @@
+:host {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 20;
+  display: block;
+}
+
+p {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  color: #111827;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(4px);
+}

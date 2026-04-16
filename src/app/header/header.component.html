@@ -1,0 +1,23 @@
+<div class="top-bar" id="top-bar">
+  <div class="logo-wrapper">
+    <a routerLink="/home" aria-label="Go to home">
+      <img src="assets/logo.jpg" alt="logo" class="avatar">
+    </a>
+  </div>
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/about-me" routerLinkActive="active">About</a>
+        <a routerLink="/skills" routerLinkActive="active">Skills</a>
+        <a routerLink="/projects" routerLinkActive="active">Projects</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </div>
+    </nav>
+  </div>
+</div>

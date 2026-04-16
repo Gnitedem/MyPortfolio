@@ -1,0 +1,142 @@
+/* CSS for the glass-like navigation bar */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  white-space: nowrap; 
+  width: 90%; 
+  max-width: 800px;
+}
+
+/* For sticky functionality */
+.top-bar.sticky {
+  position: fixed;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-wrapper {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding-top: 3px;
+}
+
+.navbar-wrapper {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 80%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #021A54;
+}
+
+.nav-links a.active {
+  color: #021A54;
+}
+
+
+
+/* Responsive styles for the navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    font-size: 12px;
+  }
+  
+  .top-bar {
+    width: 95%;
+  }
+  
+  .navbar-wrapper {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    width: 100%;
+  }
+  
+  .navbar-wrapper {
+    border-radius: 25px;
+    padding: 6px 15px;
+  }
+  
+  .logo-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo-wrapper img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .nav-links a {
+    font-size: 10px;
+  }
+}
