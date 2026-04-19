@@ -2,10 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40vh;
+  min-height: 100vh;
   padding: 2rem;
   position: relative;
-  margin-top: 40px;
   z-index: 1;
 }
 
@@ -13,6 +12,7 @@
   display: flex;
   gap: 3rem;
   align-items: center;
+  justify-content: center;
   max-width: 1000px;
   width: 100%;
 }
@@ -20,8 +20,6 @@
 .skills-section {
   flex: 1;
   padding-right: 2rem;
-  margin-top: 60px;
-  
 }
 
 .skills-section h2 {
@@ -72,4 +70,20 @@
   font-family: 'Montserrat', sans-serif;
   color: #050e3c;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    min-height: auto;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .skills-wrapper {
+    justify-content: flex-start;
+  }
+
+  .skills-section {
+    padding-right: 0;
+  }
 }
