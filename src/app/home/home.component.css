@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 7rem 1.5rem 4rem;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
 }
 
 .hero-copy {

@@ -3,6 +3,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --page-pad-x: 1.5rem;
+  --page-pad-top: 7rem;
+  --page-pad-bottom: 6rem; /* room for fixed footer */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-pad-x: 1rem;
+    --page-pad-top: 6.5rem;
+    --page-pad-bottom: 6.25rem;
+  }
+}
+
 @media (pointer: fine) {
   body,
   a,

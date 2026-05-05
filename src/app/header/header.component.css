@@ -9,9 +9,9 @@
   justify-content: space-between;
   z-index: 1000;
   transition: all 0.3s ease;
-  white-space: nowrap; 
   width: 90%; 
   max-width: 800px;
+  gap: 0.75rem;
 }
 
 /* For sticky functionality */
@@ -55,6 +55,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 80%;
+  min-width: 0;
 }
 
 .navbar {
@@ -70,7 +71,7 @@
   display: flex;
   align-items: center;
   gap: 50px;
-  white-space: nowrap;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
 }
@@ -109,16 +110,19 @@
   
   .top-bar {
     width: 95%;
+    top: 12px;
   }
   
   .navbar-wrapper {
     padding: 8px 15px;
+    width: auto;
   }
 }
 
 @media (max-width: 480px) {
   .top-bar {
     width: 100%;
+    top: 10px;
   }
   
   .navbar-wrapper {
