@@ -6,17 +6,23 @@
   </div>
   <div class="navbar-wrapper">
     <nav class="navbar">
-      <div class="menu-toggle" id="menu-toggle">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isMenuOpen"
+        (click)="toggleMenu()"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <div class="nav-links" id="nav-links">
-        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="/about-me" routerLinkActive="active">About</a>
-        <a routerLink="/skills" routerLinkActive="active">Skills</a>
-        <a routerLink="/projects" routerLinkActive="active">Projects</a>
-        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </button>
+      <div class="nav-links" [class.open]="isMenuOpen">
+        <a (click)="closeMenu()" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a (click)="closeMenu()" routerLink="/about-me" routerLinkActive="active">About</a>
+        <a (click)="closeMenu()" routerLink="/skills" routerLinkActive="active">Skills</a>
+        <a (click)="closeMenu()" routerLink="/projects" routerLinkActive="active">Projects</a>
+        <a (click)="closeMenu()" routerLink="/contact" routerLinkActive="active">Contact</a>
       </div>
     </nav>
   </div>

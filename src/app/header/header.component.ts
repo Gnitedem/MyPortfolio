@@ -11,6 +11,8 @@ export class HeaderComponent implements AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
 
+  isMenuOpen = false;
+
   ngAfterViewInit(): void {
     if (!this.isBrowser) {
       return;
@@ -28,6 +30,11 @@ export class HeaderComponent implements AfterViewInit {
 
     this.calculateTopBarPosition();
     this.updateStickyState();
+
+    // Avoid a stuck-open menu after resizing back to desktop.
+    if (window.innerWidth > 768) {
+      this.isMenuOpen = false;
+    }
   }
 
   @HostListener('window:scroll')
@@ -37,6 +44,14 @@ export class HeaderComponent implements AfterViewInit {
     }
 
     this.updateStickyState();
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 
   private calculateTopBarPosition(): void {

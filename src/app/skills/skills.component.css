@@ -10,9 +10,9 @@
 
 .skills-wrapper {
   display: flex;
+  flex-direction: column;
   gap: 3rem;
-  align-items: center;
-  justify-content: center;
+  
   max-width: 1000px;
   width: 100%;
 }
