@@ -14,7 +14,7 @@
 }
 
 .avatar-frame {
-  width: clamp(80px, 20vw, 180px);
+  width: clamp(120px, 20vw, 180px);
   aspect-ratio: 1;
   margin: 0 auto 1.5rem;
   border-radius: 50%;
@@ -23,6 +23,12 @@
   transform-origin: center;
   animation: avatar-blink 900ms ease-in-out 200ms both;
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .avatar-frame {
+    width: clamp(160px, 45vw, 240px);
+  }
 }
 
 .avatar {
