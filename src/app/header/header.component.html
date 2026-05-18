@@ -1,24 +1,21 @@
 <div class="top-bar" id="top-bar">
   <div class="logo-wrapper">
     <a routerLink="/home" aria-label="Go to home">
-      <img src="assets/logo.svg" alt="logo" class="avatar"> 
+      <img src="assets/logo.svg" alt="logo" class="avatar">
     </a>
   </div>
   <div class="navbar-wrapper">
     <nav class="navbar">
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isMenuOpen"
-        (click)="toggleMenu()"
-      >
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" [attr.aria-expanded]="isMenuOpen"
+        (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
+      <div class="menu-backdrop" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
       <div class="nav-links" [class.open]="isMenuOpen">
-        <a (click)="closeMenu()" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a (click)="closeMenu()" routerLink="/home" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Home</a>
         <a (click)="closeMenu()" routerLink="/about-me" routerLinkActive="active">About</a>
         <a (click)="closeMenu()" routerLink="/skills" routerLinkActive="active">Skills</a>
         <a (click)="closeMenu()" routerLink="/projects" routerLinkActive="active">Projects</a>
