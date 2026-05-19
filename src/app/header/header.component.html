@@ -1,26 +1,46 @@
 <div class="top-bar" id="top-bar">
   <div class="logo-wrapper">
     <a routerLink="/home" aria-label="Go to home">
-      <img src="assets/logo.svg" alt="logo" class="avatar">
+      <img src="assets/logo.svg" alt="logo" class="avatar"> 
     </a>
   </div>
+  <!-- Desktop Menu -->
   <div class="navbar-wrapper">
     <nav class="navbar">
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation" [attr.aria-expanded]="isMenuOpen"
-        (click)="toggleMenu()">
+      <div class="nav-links">
+        <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
+        <a routerLink="/skills" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Skills</a>
+        <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+        <a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="menu-backdrop" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
-      <div class="nav-links" [class.open]="isMenuOpen">
-        <a (click)="closeMenu()" routerLink="/home" routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a (click)="closeMenu()" routerLink="/about-me" routerLinkActive="active">About</a>
-        <a (click)="closeMenu()" routerLink="/skills" routerLinkActive="active">Skills</a>
-        <a (click)="closeMenu()" routerLink="/projects" routerLinkActive="active">Projects</a>
-        <a (click)="closeMenu()" routerLink="/contact" routerLinkActive="active">Contact</a>
-      </div>
     </nav>
   </div>
+</div>
+
+<div class="menu-backdrop" [class.show]="isMenuOpen" (click)="closeMenu()"></div>
+<div class="mobile-drawer" [class.open]="isMenuOpen">
+  <div class="drawer-header">
+    <div class="drawer-logo">
+      <a routerLink="/home" aria-label="Go home">
+        <img src="assets/logo.svg" alt="logo" class="h-6 w-auto" />
+      </a>
+    </div>
+    <button type="button" class="drawer-close" aria-label="Close menu" (click)="closeMenu()">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="drawer-nav">
+    <a class="drawer-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+    <a class="drawer-link" routerLink="/about-me" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">About</a>
+    <a class="drawer-link" routerLink="/skills" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Skills</a>
+    <a class="drawer-link" routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Projects</a>
+    <a class="drawer-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Contact</a>
+  </nav>
 </div>

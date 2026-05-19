@@ -46,25 +46,6 @@ export class HeaderComponent implements AfterViewInit {
     this.updateStickyState();
   }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent): void {
-    if (!this.isBrowser || !this.isMenuOpen) {
-      return;
-    }
-
-    const target = event.target as HTMLElement;
-    const navLinks = document.querySelector<HTMLElement>('.nav-links');
-    const menuToggle = document.querySelector<HTMLElement>('.menu-toggle');
-
-    if (!navLinks || !menuToggle) {
-      return;
-    }
-
-    if (!navLinks.contains(target) && !menuToggle.contains(target)) {
-      this.closeMenu();
-    }
-  }
-
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
@@ -110,4 +91,6 @@ export class HeaderComponent implements AfterViewInit {
       topBar.classList.remove('sticky');
     }
   }
+
+  
 }
