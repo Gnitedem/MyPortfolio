@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
   position: relative;
   z-index: 1;
